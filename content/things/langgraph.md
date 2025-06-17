@@ -217,7 +217,7 @@ How exciting.
 
 ### Loops
 
-The thing that LangChain could not do is model loops. So let’s make sure that LangGraph actually solves this. Just like in coding, loops need to have a break condition, and for that LangGraph has the concept of conditional edges. Conditional edges are inserted similarly to normal edges. However, instead of the target node, conitional edges accept a function that take the graph state and returns a value. The third argument is a map that maps the function’s return value to the target node’s name.
+The thing that LangChain could not do is model loops. So let’s make sure that LangGraph actually solves this. Just like in coding, loops need to have a break condition, and for that LangGraph has the concept of conditional edges. Conditional edges are inserted similarly to normal edges. However, instead of the target node, conditional edges accept a function that take the graph state and returns a value. The third argument is a map that maps the function’s return value to the target node’s name.
 
 
 ```typescript
@@ -432,6 +432,8 @@ const result = await agent.invoke({
 });
 ```
 
+<div style="width: 100%; overflow: auto">
+
 - **👤 User:**<br>
   Go to https://surma.dev, find the very first blog post ever published, and give me the "golden rule" it mentions.
 - **🛠️ Tool**:<br>
@@ -442,6 +444,8 @@ const result = await agent.invoke({
   <code>webfetch({url: "https://surma.dev/things/maelstromgaming"}) -> `<!doctype html> ...`</code>
 - **🤖 Assistant**:<br>
   The “golden rule” mentioned in the very first blog post on surma.dev, titled “Maelstrom Gaming and 12 fps” and published on November 11, 2015, is: “Always profile. Don’t guess where your bottlenecks are but gather hard numbers first.”
+
+</div>
 
 Now that is slightly more exciting! (And the golden rule is still as sound as ever!)
 
