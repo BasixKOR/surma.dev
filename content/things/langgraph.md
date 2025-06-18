@@ -406,12 +406,16 @@ const result = await agent.invoke({
 
 `result` will be the final chat log that has gone through multiple rounds of chat completion. It should look something like this:
 
+<div style="width: 100%; overflow: auto">
+
 - **👤 User:**<br>
   What is my IP? You can find it on https://jsonip.com
 - **🛠️ Tool**:<br>
   <code>webfetch({url: "https://jsonip.com"}) -> `{"ip":"219.35.66.240"}`</code>
 - **🤖 Assistant**:<br>
   Your IP address is 219.35.66.240.
+
+</div>
 
 Okay, pretty good. It works, but this is also a pretty easy scenario. If this really is a proper agent, it should also handle multiple roundtrips. Let’s try something slightly more complex:
 
